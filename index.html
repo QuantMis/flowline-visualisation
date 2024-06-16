@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+	.main {
+		text-align: center;
+	}
+	.floor {
+		height: 200px;
+		width: 200px;
+		border-style: dotted;
+		background-color: red;
+		opacity: 0.5;
+		position: fixed;
+		z-index: 0;
+		top: 60%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
+	}
+	.flowline {
+		height: 200px;
+		width: 200px;
+		border-style: dotted;
+		opacity: 0.5;
+		position: fixed;
+		z-index: 0;
+		top: 60%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
+	}
+
+</style>
+<body>
+
+<div class="main" id="app">
+	<h1>Object Path</h1>
+	<div>
+	  <button>Floor 1</button>
+	  <button>Floor 2</button>
+	  <button>Floor 3</button>
+	</div>
+
+	<br>
+	<div class="floor"></div>	
+	<canvas ref="flowlineCanvas" class="flowline"></canvas>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script type="text/javascript">
+	const { createApp, ref } = Vue
+
+ 	createApp({
+ 	  setup() {
+		const count = ref(0)
+		
+		return {
+			count,
+		}
+ 	  }
+		
+ 	}).mount('#app')
+</script>
+
+</body>
+</html>
+
